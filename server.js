@@ -52,7 +52,12 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
-
+if (process.env.NODE_ENV === "production"){
+  app.use(express.static("build"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname,  "build", "index.html"));
+  });
+}
 // launch ======================================================================
 server.listen(port);
 console.log('Quill dances on ' + port);
