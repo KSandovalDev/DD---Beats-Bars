@@ -22,14 +22,20 @@
                 <a href="/logout" class="btn btn-default btn-sm">Logout</a>
             </div>
     </div>
-
+    <div class="messageContainer">
+        <div class="messageArea">
+            <ul id="messages"></ul>
+        </div>
+        <div class="messageForm">
+            <form id="form" action="">
+                <input id="input" autocomplete="off" /><button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+    
     <!-- <% for(let i =0;i<user.length;i++){ %>
-    <h3><%= user[i].name %>, <%= user[i].age %></h3>
-    <% } %> -->
-    <form id="form" action="">
-      <input id="input" autocomplete="off" /><button type="submit">Send</button>
-    </form>
-    <ul id="messages"></ul>
+    <h3><%= user[i].name %></h3>
+    <% } %>  -->
 
     <script>
         var socket = io();
@@ -41,7 +47,7 @@
         form.addEventListener('submit', function (e) {
         e.preventDefault();
         if (input.value) {
-            socket.emit('chat message', {message:input.value,fromName:'placeholder:from',fromEmail:"<%=user.local.email%>",toEmail: '<%= username %>'});
+            socket.emit('chat message', {message:input.value,fromName:'<%= user.username %>',fromEmail:"<%=user.local.email%>",toEmail: '<%= username %>'});
             input.value = '';
         }
         });
@@ -49,9 +55,17 @@
         socket.on('chat message', function (msg) {
             console.log("message recieved", msg)
             if(msg.toEmail === "<%=user.local.email%>" || msg.fromEmail === "<%=user.local.email%>"){
+                var from = document.createElement('span');
                 var item = document.createElement('li');
+                if(msg.fromEmail === "<%=user.local.email%>"){
+                    item.classList.add('floatRight')
+                    from.classList.add('floatRight')
+                }
                 item.textContent = msg.message;
+                from.textContent = msg.fromName;
+                messages.appendChild(from);
                 messages.appendChild(item);
+                console.log(msg.fromEmail)
                 window.scrollTo(0, document.body.scrollHeight); 
             }
         });

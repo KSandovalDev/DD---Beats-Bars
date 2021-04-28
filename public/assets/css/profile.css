@@ -139,6 +139,36 @@ body {
     border-radius: 36px;
 }
 
+#messages, #form, .messageArea, .messageContainer, .messageForm{
+    border: 2px solid yellow;
+}
+
+.messageContainer{
+    width:70%;
+    min-height: 400px;
+    margin-left: 15%;
+    margin-top: 10%;
+    
+}
+.messageArea{
+    width:100%;
+    min-height:350px;
+    
+}
+.messageForm{
+    width:100%;
+    min-height:50px;
+}
+
+#input{
+    color: mediumspringgreen !important;
+    background-color: white;
+}
+.messageArea ul li{
+    list-style: none;
+    color: white;
+
+}
 .stageProfile::-webkit-scrollbar {
     display: none;
 }
@@ -307,3 +337,13 @@ select:-webkit-autofill:focus {
 /* .hidden{
     display: none;
 } */
+
+.floatRight{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2%;
+}
+
+#messages span{
+    color: pink;
+}
