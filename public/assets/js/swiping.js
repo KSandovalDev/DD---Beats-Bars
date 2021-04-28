@@ -11,6 +11,7 @@ function swipeLeft() {
     let lastProfile = document.querySelector(".stageProfile:last-child");
     lastProfile.ontransitionend = function(event) {
         lastProfile.parentNode.removeChild(lastProfile);
+        // document.querySelector(".stageProfile:last-child").classList.remove("hidden")
       }
 
 }

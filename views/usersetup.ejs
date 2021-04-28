@@ -20,7 +20,7 @@
   <body id="setup">
 
      <div class="page-header text-center">
-        <h1 class="mb-0 super effect-static-text">Beats & Bars</h1>
+        <!-- <h1 class="mb-0 super effect-static-text">Beats & Bars</h1> -->
             <div id="navBtns">
                 <a href="/home" class="btn btn-default btn-sm">Profile</a>
                 <a href="/swiping" class="btn btn-default btn-sm">Swipe</a>
@@ -194,7 +194,6 @@
             placeholder="https://example.com"
             pattern="https://.*"
             size="30"
-            required
           />
         </div>
         <div>
@@ -211,7 +210,7 @@
         </div>
         <div>
           <label for="looking-select">Looking For:</label>
-          <select name="looking" id="looking-select">
+          <select name="looking" id="looking-select" required>
             <option value="Someone to Jam with">Someone to Jam with</option>
             <option value="Collaborators">Collaborators</option>
             <option value="More musical connections">
@@ -224,10 +223,6 @@
           <input type="text" name="influences" id="influences" />
         </div>
         <input type="submit" name="submit" id="profileSubmit" value="submit" />
-        <!-- 
-
-        lookingfor   : String, - selects
-        influences   : [String], -->
       </form>
     </div>
   </body>

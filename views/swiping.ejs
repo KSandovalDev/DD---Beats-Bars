@@ -11,9 +11,9 @@
     <script type="text/javascript" src="assets/js/swiping.js"></script>
 </head>
 <body>
-    <div class="page-header text-center">
+    <!-- <div class="page-header text-center">
         <h1 class="mb-0 super effect-static-text">Beats & Bars</h1>
-    </div>
+    </div> -->
     
     <div id="navBtns">
         <a href="/home" class="btn btn-default btn-sm">Profile</a>
@@ -21,7 +21,10 @@
         <a href="/matches" class="btn btn-default btn-sm">Matches</a>
         <a href="/logout" class="btn btn-default btn-sm">Logout</a>
     </div>
-
+    <div class="swipeBtns">
+        <button class="swipeLeft" id="skip">Skip</button>
+        <button class="swipeRight" id="play">Play</button>
+    </div>
 
     <div class="container">
     <!-- if you want to display a string in EJS use = if you wanna display code use - -->
@@ -33,14 +36,14 @@
                             <input type="text" name="userEmail" value="<%= result[i].username %>" hidden>
                             <button class="play" type="submit">Play</button>
                         </form>
-                        <h3>First Name: <%= result[i].firstname %></h3>
-                        <h3>Last Name: <%= result[i].lastname %></h3>
+                        <!-- <h3>First Name: <%= result[i].firstname %></h3>
+                        <h3>Last Name: <%= result[i].lastname %></h3> -->
                         <h3><%= result[i].name %>, <%= result[i].age %></h3>
                         <h3>Bio: <%= result[i].bio %></h3>
                         <h3>Genres: <%= result[i].genre1 %>, <%= result[i].genre2 %>, <%= result[i].genre3 %>, <%= result[i].genre4 %></h3>
-                        <h3>Influences: <%= result[i].influences %></h3>
+                        <!-- <h3>Influences: <%= result[i].influences %></h3> -->
                         <h3>Instruments & Level <%= result[i].instrument %>, Level: <%= result[i].instrumentLevel %></h3>
-                        <h3>Instagram: <%= result[i].instagramLink %></h3>
+                        <!-- <h3>Instagram: <%= result[i].instagramLink %></h3> -->
                         <h3>Looking for: <%= result[i].looking %></p>
                         <p><%- result[i].spotifyCode %></p>
                         <p><%- result[i].youtubeCode %></p>
@@ -49,10 +52,7 @@
                 <% } %>
             </div>
     </div>
-    <div class="swipeBtns">
-        <button class="swipeLeft" id="skip">Skip</button>
-        <button class="swipeRight" id="play">Play</button>
-    </div>
+    
    
    
 </body>
