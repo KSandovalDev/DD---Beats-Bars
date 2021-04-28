@@ -12,24 +12,36 @@
 </head>
 <body>
 
-    <!-- <div class="page-header text-center" id="nav">
-        <h1 class="mb-0 super effect-static-text"> Beats & Bars</h1>
-    </div> -->
+    <div class="clearfix booking-form neon-lit-background">
+        <div class="booking-form__heading no-print">
+             <div>
+                <div class="neon-border neon-border--flush neon-border--blue neon-border--topgap-xxs neon-border--bottomgap-xxs">
+                    <h1 class="h1 type-decorative text-glow pink">BEATS     <span class="h1 annoying type-decorative text-glow pink">   &   </span>   BARS</h1>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <div id="navBtns">
-        <a href="/home" class="btn btn-default btn-sm">Profile</a>
-        <a href="/swiping" class="btn btn-default btn-sm">Swipe</a>
-        <a href="/matches" class="btn btn-default btn-sm">Matches</a>
-        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+        <a href="/home" class=" navLink btn btn-default btn-sm">Profile</a>
+        <a href="/swiping" class="navLink btn btn-default btn-sm">Swipe</a>
+        <a href="/matches" class=" navLink btn btn-default btn-sm">Matches</a>
+        <a href="/logout" class=" navLink btn btn-default btn-sm">Logout</a>
     </div>
+
+
   
 
 <div class="container" id="userProfile">
-    <button id="setProfile"><a href="/userSetup" id="editProfile">Set Up or Edit your profile<a></button>
 
 <!--    add descriptors to this ejs -->
 <!-- if you want to display a string in EJS use = if you wanna display code use - -->
         <div id="personProfile">
+            <button id="setProfile"><a href="/userSetup" id="editProfile">Set Up or Edit your profile<a></button>
+
             <% for(let i =0;i<result.length;i++){ %>
                 <img src="<%= result[i].imgPath %>" alt="" class="avatar">
                <p><%= result[i].firstname %>, <%= result[i].lastname %></p>
@@ -45,5 +57,25 @@
                 <% } %>
         </div>
 </div>
+
+
+
+
+
+<script>
+    var cont = $(".neon-lit-background");
+var neon = $(".neon-border");
+setInterval(function() {
+var i = Math.floor((Math.random() * 10) + 1) * 200;
+setTimeout(function() {
+setTimeout(function() {
+    $(cont).addClass("neon-lit-background--poweroff");
+    $(neon).addClass("neon-border--poweroff");
+  }, i),
+  $(cont).removeClass("neon-lit-background--poweroff");
+$(neon).removeClass("neon-border--poweroff");
+}, 1000);
+}, 2000);
+</script>
 </body>
 </html>

@@ -2,54 +2,129 @@
 <html>
 <head>
     <title>Beats & Bars</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/profile.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assets/css/default.css">
     <link rel="stylesheet" href="/assets/css/theme-orange.css">
     <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/profile.css">
     <script type="text/javascript" src="assets/js/swiping.js"></script>
+
 </head>
 <body>
-    <!-- <div class="page-header text-center">
-        <h1 class="mb-0 super effect-static-text"> Beats & Bars</h1>
-    </div> -->
 
-    <div id="navBtns">
-        <a href="/home" class="btn btn-default btn-sm">Profile</a>
-        <a href="/swiping" class="btn btn-default btn-sm">Swipe</a>
-        <a href="/matches" class="btn btn-default btn-sm">Matches</a>
-        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
-    </div>
 
-    <div class="container">
-    <!-- if you want to display a string in EJS use = if you wanna display code use - -->
-            <div class="cardsContainer">
-                <% for(let i =0;i<filtered.length;i++){ %>
-                    <div class="outlineProfile" >
-                        <img src="<%= filtered[i][0].imgPath %>" alt="" class="avatar"> 
-                        <!-- <form action="/likeUser" method="POST" >
-                            <input type="text" name="userEmail" value="<%= filtered[i][0].username %>" hidden>
-                            <button class="play" type="submit">Play</button>
-                        </form> -->
-                        <a href="/chat/<%= filtered[i][0].username %>"><button id="msgBtn">Message</button></a>
-                        <!-- <button disabled="disabled" >Unmatch</button> -->
-                        <h3>First Name: <%= filtered[i][0].firstname %></h3>
-                        <h3>Last Name: <%= filtered[i][0].lastname %></h3>
-                        <h3><%= filtered[i][0].name %>, <%= filtered[i][0].age %></h3>
-                        <h3>Bio: <%= filtered[i][0].bio %></h3>
-                        <h3>Genres: <%= filtered[i][0].genre1 %>, <%= filtered[i][0].genre2 %>, <%= filtered[i][0].genre3 %>, <%= filtered[i][0].genre4 %></h3>
-                        <h3>Influences: <%= filtered[i][0].influences %></h3>
-                        <h3>Instruments & Level <%= filtered[i][0].instrument %>, level :<%= filtered[i][0].instrumentLevel %></h3>
-                        <h3>Instagram: <%= filtered[i][0].instagramLink %></h3> 
-                        <h3>Looking for: <%= filtered[i][0].looking %></h3>
-                        <p><%- filtered[i][0].spotifyCode %></p>
-                        <p><%- filtered[i][0].youtubeCode %></p>
-                        <p><%- filtered[i][0].soundCloudCode %></p>
-                    </div>
-                <% } %>
+
+    <div class="clearfix booking-form neon-lit-background">
+        <div class="booking-form__heading no-print">
+             <div>
+                <div class="neon-border neon-border--flush neon-border--blue neon-border--topgap-xxs neon-border--bottomgap-xxs">
+                    <h1 class="h1 type-decorative text-glow pink">BEATS     <span class="h1 annoying type-decorative text-glow pink">   &   </span>   BARS</h1>
+
+                    
+                </div>
             </div>
+        </div>
     </div>
-   
+
+    <div></div>
+    <div></div>
+    <div id="navBtns">
+        <a href="/home" class=" navLink btn btn-default btn-sm">Profile</a>
+        <a href="/swiping" class="navLink btn btn-default btn-sm">Swipe</a>
+        <a href="/matches" class=" navLink btn btn-default btn-sm">Matches</a>
+        <a href="/logout" class=" navLink btn btn-default btn-sm">Logout</a>
+    </div>
+
+
+
+
+    <div class="team-boxed">
+        <div class="container1">
+        
+            <div class="people">
+                <% for(let i =0;i<filtered.length;i++){ %>
+                <div class="col-sm-3 item">
+                    <div class="box"><img class="rounded-circle" src="<%= filtered[i][0].imgPath %>">
+                        <h3 class="name"><%= filtered[i][0].name %>, <%= filtered[i][0].age %></h3>
+                        <p class="title"> Looking for: <%= filtered[i][0].looking %></p>
+                        <p class="description">Instrument & Level : <%= filtered[i][0].instrument %>, level :<%= filtered[i][0].instrumentLevel %> </p>
+                        <!-- <div class="social"><a href="${linkedin}"><i class="fa fa-linkedin"></i></a></div> -->
+                        <button id="edit" data-target="#<%= filtered[i][0]._id %>" data-toggle="modal" class="btn btn-secondary">View profile</button>
+                                  
+                    </div>
+                </div>
+        
+                <!-- Modal -->
+        <div class="modal fade" id="<%= filtered[i][0]._id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <a href="/chat/<%= filtered[i][0].username %>"><button id="msgBtn2">Message</button></a>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <!-- stuff goes here -->
+                  <img class="rounded-circle" src="<%= filtered[i][0].imgPath %>">
+                  <h6><%= filtered[i][0].name %>, <%= filtered[i][0].age %></h6>
+                  <p>Bio: <%= filtered[i][0].bio %></p>
+                  <p>Genres: <%= filtered[i][0].genre1 %>, <%= filtered[i][0].genre2 %>, <%= filtered[i][0].genre3 %>, <%= filtered[i][0].genre4 %></p>
+                  <p>Influences: <%= filtered[i][0].influences %></p>
+                  <p>Instruments & Level <%= filtered[i][0].instrument %>, level :<%= filtered[i][0].instrumentLevel %></p>
+                  <p>Looking for: <%= filtered[i][0].looking %></p>
+                 
+                <div class="social"><a href="<%= filtered[i][0].instagramLink %>"><i class="fa fa-instagram"></i></a></div>
+
+                  <p><%- filtered[i][0].spotifyCode %></p>
+                  <p><%- filtered[i][0].youtubeCode %></p>
+                  <p><%- filtered[i][0].soundCloudCode %></p>
+              </div>
+              <div class="modal-footer">
+              </div>
+             </div>
+             </div>
+            </div>
+        <% } %>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+
+    <script>
+        var cont = $(".neon-lit-background");
+var neon = $(".neon-border");
+setInterval(function() {
+  var i = Math.floor((Math.random() * 10) + 1) * 200;
+  setTimeout(function() {
+    setTimeout(function() {
+        $(cont).addClass("neon-lit-background--poweroff");
+        $(neon).addClass("neon-border--poweroff");
+      }, i),
+      $(cont).removeClass("neon-lit-background--poweroff");
+    $(neon).removeClass("neon-border--poweroff");
+  }, 1000);
+}, 2000);
+    </script>
 </body>
 </html>

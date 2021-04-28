@@ -11,16 +11,26 @@
     <script type="text/javascript" src="assets/js/swiping.js"></script>
 </head>
 <body>
-    <!-- <div class="page-header text-center">
-        <h1 class="mb-0 super effect-static-text">Beats & Bars</h1>
-    </div> -->
-    
-    <div id="navBtns">
-        <a href="/home" class="btn btn-default btn-sm">Profile</a>
-        <a href="/swiping" class="btn btn-default btn-sm">Swipe</a>
-        <a href="/matches" class="btn btn-default btn-sm">Matches</a>
-        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    <div class="clearfix booking-form neon-lit-background">
+        <div class="booking-form__heading no-print">
+             <div>
+                <div class="neon-border neon-border--flush neon-border--blue neon-border--topgap-xxs neon-border--bottomgap-xxs">
+                    <h1 class="h1 type-decorative text-glow pink">BEATS     <span class="h1 annoying type-decorative text-glow pink">   &   </span>   BARS</h1>
+
+                    
+                </div>
+            </div>
+        </div>
     </div>
+
+    <div id="navBtns">
+        <a href="/home" class=" navLink btn btn-default btn-sm">Profile</a>
+        <a href="/swiping" class="navLink btn btn-default btn-sm">Swipe</a>
+        <a href="/matches" class=" navLink btn btn-default btn-sm">Matches</a>
+        <a href="/logout" class=" navLink btn btn-default btn-sm">Logout</a>
+    </div>
+
+
     <div class="swipeBtns">
         <button class="swipeLeft" id="skip">Skip</button>
         <button class="swipeRight" id="play">Play</button>
@@ -54,6 +64,23 @@
     </div>
     
    
-   
+
+    
+
+    <script>
+        var cont = $(".neon-lit-background");
+var neon = $(".neon-border");
+setInterval(function() {
+  var i = Math.floor((Math.random() * 10) + 1) * 200;
+  setTimeout(function() {
+    setTimeout(function() {
+        $(cont).addClass("neon-lit-background--poweroff");
+        $(neon).addClass("neon-border--poweroff");
+      }, i),
+      $(cont).removeClass("neon-lit-background--poweroff");
+    $(neon).removeClass("neon-border--poweroff");
+  }, 1000);
+}, 2000);
+    </script>
 </body>
 </html>
