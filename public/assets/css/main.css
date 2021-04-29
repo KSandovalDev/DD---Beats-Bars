@@ -286,13 +286,12 @@ h2.super {
 }
 
 h3 {
-    margin: 1.5rem 0;
-    font-size: 2rem;
+    margin: .5rem 0;
+    font-size: 1rem;
     font-weight: var(--h2-weight);
     line-height: 1.2;
     font-family: var(--h2-font);
-    color: var(--primary-t-color);
-    -ms-word-wrap: break-word;
+    color: white;
     word-wrap: break-word;
 }
 
@@ -725,6 +724,7 @@ aside {
 .container {
     max-width: 1170px;
     padding: 0;
+    color: white;
 }
 
 .container.header {
@@ -1352,7 +1352,7 @@ aside {
     -webkit-background-clip: text;
     -moz-background-clip: text;
          background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: white;
 }
 
 .form .message .done {

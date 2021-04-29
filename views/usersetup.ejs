@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="assets/css/profile.css">
     <link rel="stylesheet" href="assets/css/default.css">
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/theme-orange.css">
+    <!-- <link rel="stylesheet" href="assets/css/theme-orange.css"> -->
   </head>
   <body id="setup">
 
@@ -56,11 +56,11 @@
           <label for="age">Please Enter Age:</label>
           <input type="number" id="age" name="age" min="13" max="120" />
         </div>
+        <label for="photos">Please Upload a photo</label>
         <input type="file" name="file-to-upload" required />
-        <label for="photos"></label>
-        <h2>Enter your bio: </h2>
+        <h3>Enter your bio: </h3>
         <textarea name="bio" id="" cols="30" rows="10" required></textarea>
-        <h2>Select 4 Genres: </h2>
+        <h3>Select 4 Genres: </h3>
         <!-- GENRES SELECTS==================================================================================================-->
         <div class="genres">
           <label for="genre-select">Genres</label>
@@ -232,7 +232,7 @@
           </select>
         </div>
         <div>
-          <h2>Influences: </h2>
+          <h3>Influences: </h3>
           <input type="text" name="influences" id="influences" />
         </div>
         <input type="submit" name="submit" id="profileSubmit" value="submit" />
@@ -267,6 +267,6 @@ setInterval(function() {
   }, 1000);
 }, 2000);
     </script>
-
-</body>
+    
+  </body>
 </html>

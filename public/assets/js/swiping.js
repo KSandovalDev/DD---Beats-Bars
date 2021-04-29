@@ -18,7 +18,16 @@ function swipeLeft() {
 
 function swipeRight() {
     console.log("WORKING222!")
-    // document.getElementById("likeUserForm").submit()
+    // document.querySelector(".stageProfileSwiping:last-child form").submit()
+    let username = document.querySelector(".stageProfileSwiping:last-child form input").value
+    console.log("swiped right on", username)
+    fetch('/likeUser', {
+        method: 'post',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          'userEmail':username,
+        })
+      })
     document.querySelector(".stageProfileSwiping:last-child").classList.add("swipedRight");
     let lastProfile = document.querySelector(".stageProfileSwiping:last-child");
     lastProfile.ontransitionend = function(event) {
