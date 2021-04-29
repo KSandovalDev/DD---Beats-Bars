@@ -133,10 +133,7 @@ a:hover,
 a:focus {
   outline: 0 none;
 }
-/* img {
-  max-width: 100%;
-  height: auto;
-} */
+
 ul {
   list-style: outside none none;
   margin: 0;
@@ -3470,7 +3467,7 @@ ul {
   border: 1px solid #8385bf;
   padding: 10px 15px;
   background-color: #E8F0FE;
-  color: #fff;
+  color: black;
 }
 .fxt-template-layout9 .fxt-form input::-webkit-input-placeholder {
   color: #bebebe;

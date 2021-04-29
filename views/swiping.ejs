@@ -34,40 +34,62 @@
 
 
     <div class="swipeBtns">
-        <button class="swipeLeft" id="skip">Skip</button>
-        <button class="swipeRight" id="play">Play</button>
-    </div>
+        
+        <div>
+            <button class="swipeLeft" id="skip">Skip</button>
 
-    <div class="container">
-    <!-- if you want to display a string in EJS use = if you wanna display code use - -->
-            <div class="cardsContainer">
-                <% for(let i =0;i<result.length;i++){ %>
-                    <div class="stageProfile">
-                        <img src="<%= result[i].imgPath %>" alt="" class="avatar"> 
-                        <form action="/likeUser" method="POST" >
-                            <input type="text" name="userEmail" value="<%= result[i].username %>" hidden>
-                            <button class="play" type="submit">Play</button>
-                        </form>
-                        <!-- <h3>First Name: <%= result[i].firstname %></h3>
-                        <h3>Last Name: <%= result[i].lastname %></h3> -->
-                        <h3><%= result[i].name %>, <%= result[i].age %></h3>
-                        <h3>Bio: <%= result[i].bio %></h3>
-                        <h3>Genres: <%= result[i].genre1 %>, <%= result[i].genre2 %>, <%= result[i].genre3 %>, <%= result[i].genre4 %></h3>
-                        <!-- <h3>Influences: <%= result[i].influences %></h3> -->
-                        <h3>Instruments & Level <%= result[i].instrument %>, Level: <%= result[i].instrumentLevel %></h3>
-                        <!-- <h3>Instagram: <%= result[i].instagramLink %></h3> -->
-                        <h3>Looking for: <%= result[i].looking %></p>
-                        <p><%- result[i].spotifyCode %></p>
-                        <p><%- result[i].youtubeCode %></p>
-                        <p><%- result[i].soundCloudCode %></p>
+        </div>
+
+
+        <div class="container">
+            <!-- if you want to display a string in EJS use = if you wanna display code use - -->
+                    <div class="cardsContainer">
+                        <% for(let i =0;i<result.length;i++){ %>
+                            <div class="stageProfileSwiping">
+                                <img src="<%= result[i].imgPath %>" alt="" class="avatar"> 
+                                <form action="/likeUser" method="POST" id="likeUserForm">
+                                    <input type="text" name="userEmail" value="<%= result[i].username %>" hidden>
+                                    <button class="play" type="submit">Play</button>
+                                </form>
+                                <!-- <h3>First Name: <%= result[i].firstname %></h3>
+                                <h3>Last Name: <%= result[i].lastname %></h3> -->
+                                <h3><%= result[i].name %>, <%= result[i].age %></h3>
+                                <h3>Bio: <%= result[i].bio %></h3>
+                                <h3>Genres: <%= result[i].genre1 %>, <%= result[i].genre2 %>, <%= result[i].genre3 %>, <%= result[i].genre4 %></h3>
+                                <!-- <h3>Influences: <%= result[i].influences %></h3> -->
+                                <h3>Instruments & Level <%= result[i].instrument %>, Level: <%= result[i].instrumentLevel %></h3>
+                                <!-- <h3>Instagram: <%= result[i].instagramLink %></h3> -->
+                                <h3>Looking for: <%= result[i].looking %></p>
+                                <p><%- result[i].spotifyCode %></p>
+                                <p><%- result[i].youtubeCode %></p>
+                                <p><%- result[i].soundCloudCode %></p>
+                            </div>
+                        <% } %>
                     </div>
-                <% } %>
             </div>
-    </div>
-    
-   
+            
 
-    
+        <div>
+            <button class="swipeRight play" id="play">Play</button>
+        </div>
+
+        
+    </div>
+
+   
+   
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
 
     <script>
         var cont = $(".neon-lit-background");
@@ -84,5 +106,6 @@ setInterval(function() {
   }, 1000);
 }, 2000);
     </script>
+
 </body>
 </html>

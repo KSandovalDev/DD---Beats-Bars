@@ -213,16 +213,49 @@ body {
 }
 
 .stageProfile{
-    background-color: rgb(212, 206, 206);
-    margin-top: 3%;
+    background-color: #f3d6f3;
+    margin-top: 7%;
     margin-bottom: 3%;
     position: absolute;
-    height: 500px;
+    height: 575px;
     overflow-y: scroll;
     width: 100%;
     transition: transform 450ms ease-in-out;
     border-radius: 36px;
 }
+
+.stageProfile::-webkit-scrollbar {
+    display: none;
+}
+
+.stageProfile {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+  }
+
+
+
+  .stageProfileSwiping{
+    background-color: #f3d6f3;
+    margin-top: 7%;
+    margin-bottom: 3%;
+    position: absolute;
+    height: 575px;
+    overflow-y: scroll;
+    width: 100%;
+    transition: transform 450ms ease-in-out;
+    border-radius: 36px;
+}
+
+.stageProfileSwiping::-webkit-scrollbar {
+
+    display: none;
+}
+
+.stageProfileSwiping {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+  }
 
 .messageContainer{
     border: 4px solid #ffbde5;
@@ -272,26 +305,21 @@ body {
     color: white;
 
 }
-.stageProfile::-webkit-scrollbar {
-    display: none;
-}
-
-.stageProfile {
-    -ms-overflow-style: none;  
-    scrollbar-width: none;  
-  }
 .swipedRight{
     transform: translateX(140%);
 }
 .swipedLeft{
     transform: translateX(-140%);
+
 }
 .cardsContainer{
     position: relative;
-    height: 590px;
+    height: 685px;
     margin-top: -72px;
-    margin-bottom: 45px;
+    margin-bottom: 10px;
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 input:-webkit-autofill,
@@ -319,17 +347,21 @@ select:-webkit-autofill:focus {
 }
 
 #setProfile{
-    margin-left: 81%;
-    margin-bottom: 18px;
-    background-color: tomato;
+    margin-left: 39%;
+    margin-bottom: 1%;
+    background-color: #ffbde5;
+    border-radius: 18px;
+    font-family: 'Syncopate';
+    margin-top: 1%;
 }
 
 #editProfile{
     color: white;
-    background-color: tomato;;
+    background-color: #ffbde5;
 }
 #setProfile:hover{
-    background-color: #FC5130;
+    /* background-color: #bde1ff;
+    color: #bde1ff; */
 }
 #personProfile{
     text-align: center;
@@ -343,20 +375,29 @@ select:-webkit-autofill:focus {
 
 .swipeBtns{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     font-size: 3rem;
-    margin-bottom: 36px;
+    margin-bottom: 5px;
+    width:70%;
+    margin-left:12%;
+    margin-top: 3%;
+    align-items: center;
+    font-family: 'Syncopate', sans-serif;
+  
    
 }
 
 #skip{
     margin-right: 108px;
-    color: whitesmoke;
+    color: white;
     background-color: #C42021;
+    border-radius: 18px;
 }
 #play{
-    color: whitesmoke;
+    color: white;
     background-color:#76F7BF;
+    border-radius: 18px;
+    margin-left: 75%;
 }
 
 #skip:hover{
@@ -538,10 +579,6 @@ select:-webkit-autofill:focus {
     flex-wrap: wrap;
   }
 
-  img{
-      display: none;
-  }
-
   .modal-body{
       flex-direction: column;
   }
@@ -553,6 +590,62 @@ select:-webkit-autofill:focus {
   a:not(.btn), a:link:not(.btn), a:visited:not(.btn), a:hover:not(.btn), a:active:not(.btn){
       font-size: 2.3rem;
   }
+
+  .containerProfile{
+	position:relative;
+	width:50vw;
+	height:auto;
+	background: #f3d6f3;
+	left:0;right:0;bottom:0; top:0;
+    margin-top: 3%;
+    margin:auto;
+    margin-bottom: 3%;
+	/* border-bottom-left-radius:0.8vw;
+	border-bottom-right-radius:0.8vw; */
+	box-shadow:0px 4px 14px rgba(0,0,0,0.3);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+
+
+	}	
+
+.profileImg{
+    border-radius: 10px;
+    height: 400px;
+    width: 100%;
+
+}
+
+.profileInfo{
+    margin-top: 3%;
+    margin-bottom: 3%;
+    text-align: center;
+}
+
+/* .usersCodes{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content:center;
+    margin-left:15%;
+    padding-left:15%;
+} */
+
+.usersCodes {
+    width: 1164px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin-left: -4%;
+    padding-left: 15%;
+    border-radius: 10px;
+}
+
+
 
 @media only screen and (max-width: 770px) {
     

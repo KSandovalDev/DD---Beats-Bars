@@ -7,8 +7,8 @@ console.log("LOADING!")
 
 function swipeLeft() {
     console.log("WORKING!")
-    document.querySelector(".stageProfile:last-child").classList.add("swipedLeft")
-    let lastProfile = document.querySelector(".stageProfile:last-child");
+    document.querySelector(".stageProfileSwiping:last-child").classList.add("swipedLeft")
+    let lastProfile = document.querySelector(".stageProfileSwiping:last-child");
     lastProfile.ontransitionend = function(event) {
         lastProfile.parentNode.removeChild(lastProfile);
         // document.querySelector(".stageProfile:last-child").classList.remove("hidden")
@@ -18,12 +18,12 @@ function swipeLeft() {
 
 function swipeRight() {
     console.log("WORKING222!")
-    document.querySelector(".stageProfile:last-child").classList.add("swipedRight");
-    let lastProfile = document.querySelector(".stageProfile:last-child");
+    // document.getElementById("likeUserForm").submit()
+    document.querySelector(".stageProfileSwiping:last-child").classList.add("swipedRight");
+    let lastProfile = document.querySelector(".stageProfileSwiping:last-child");
     lastProfile.ontransitionend = function(event) {
         lastProfile.parentNode.removeChild(lastProfile);
-      }
-
+      }  
 }
 
 

@@ -33,51 +33,83 @@
         <a href="/matches" class=" navLink btn btn-default btn-sm glow">Matches</a>
         <a href="/logout" class=" navLink btn btn-default btn-sm glow">Logout</a>
     </div>
+    <button id="setProfile"><a href="/userSetup" id="editProfile">Set Up or Edit your profile<a></button>
 
+    <div class="containerProfile">
+        <% for(let i =0;i<result.length;i++){ %>
+
+            <div>
+
+                <img class="profileImg" src="<%= result[i].imgPath %>">
+
+            </div>
+
+       
+       
+
+        <div class="profileInfo">
+            <h2 class="name"><%= result[i].firstname %> <%= result[i].lastname %></h2>
+            <p><%= result[i].name %>, <%= result[i].age %></p>
+
+
+            <p><%= result[i].bio %></p>
+            <p>Genres: <%= result[i].genre1 %>, <%= result[i].genre2 %>, <%= result[i].genre3 %>, <%= result[i].genre4 %></p>
+            <p>Influences: <%= result[i].influences %></p>
+            <p>Instrument & Proficiency <%= result[i].instrument %>, level :<%= result[i].instrumentLevel %></p>
+            <div class="social"><a href="<%= result[i].instagramLink %>"><i class="fa fa-instagram"></i></a></div>
+            <p> Looking for: <%= result[i].looking %></p>
+        </div>
+
+        
+        <div class="usersCodes">
+            <p>
+            <%- result[i].spotifyCode %>
+            <%- result[i].youtubeCode %>
+            <%- result[i].soundCloudCode %>
+            <% } %></p>
+        </div>
+      
+        </div>
 
   
 
-<div class="container" id="userProfile">
-
-<!--    add descriptors to this ejs -->
-<!-- if you want to display a string in EJS use = if you wanna display code use - -->
-        <div id="personProfile">
-            <button id="setProfile"><a href="/userSetup" id="editProfile">Set Up or Edit your profile<a></button>
-
-            <% for(let i =0;i<result.length;i++){ %>
-                <img src="<%= result[i].imgPath %>" alt="" class="avatar">
-               <p><%= result[i].firstname %>, <%= result[i].lastname %></p>
-               <p>Bio: <%= result[i].bio %></p>
-               <p>Genres: <%= result[i].genre1 %>, <%= result[i].genre2 %>, <%= result[i].genre3 %>, <%= result[i].genre4 %></p>
-               <p>Influences: <%= result[i].influences %></p>
-               <p>Instrument & Proficiency <%= result[i].instrument %>, level :<%= result[i].instrumentLevel %></p>
-               <p>Instagram <%= result[i].instagramLink %></p>
-               <p> Looking for: <%= result[i].looking %></p>
-               <p><%- result[i].spotifyCode %></p>
-               <p><%- result[i].youtubeCode %></p>
-               <p><%- result[i].soundCloudCode %></p>
-                <% } %>
-        </div>
-</div>
 
 
 
 
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    
+    
+        <script>
+            var cont = $(".neon-lit-background");
+    var neon = $(".neon-border");
+    setInterval(function() {
+      var i = Math.floor((Math.random() * 10) + 1) * 200;
+      setTimeout(function() {
+        setTimeout(function() {
+            $(cont).addClass("neon-lit-background--poweroff");
+            $(neon).addClass("neon-border--poweroff");
+          }, i),
+          $(cont).removeClass("neon-lit-background--poweroff");
+        $(neon).removeClass("neon-border--poweroff");
+      }, 1000);
+    }, 2000);
+        </script>
 
-<script>
-    var cont = $(".neon-lit-background");
-var neon = $(".neon-border");
-setInterval(function() {
-var i = Math.floor((Math.random() * 10) + 1) * 200;
-setTimeout(function() {
-setTimeout(function() {
-    $(cont).addClass("neon-lit-background--poweroff");
-    $(neon).addClass("neon-border--poweroff");
-  }, i),
-  $(cont).removeClass("neon-lit-background--poweroff");
-$(neon).removeClass("neon-border--poweroff");
-}, 1000);
-}, 2000);
+
+
+
+
 </script>
 </body>
 </html>
