@@ -18,6 +18,10 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.hidden{
+  display: none;
+}
 p {
   margin: 0 0 20px 0;
   color: #646464;
@@ -3387,7 +3391,7 @@ ul {
   content: "";
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: transparent;
   left: 0;
   top: 0;
   position: absolute;
@@ -3408,11 +3412,11 @@ ul {
   flex-wrap: wrap;
 }
 .fxt-template-layout9 .fxt-content {
-  padding-top: 40px;
+  /* padding-top: 40px;
   padding-bottom: 15px;
-  padding-left: 70px;
-  margin-left: 40px;
-  border-left: 2px solid rgba(111, 117, 182, 0.5);
+  /* padding-left: 70px;
+  margin-left: 40px; */
+  margin-bottom: 30%;
 }
 @media only screen and (max-width: 991px) {
   .fxt-template-layout9 .fxt-content {
@@ -3425,7 +3429,9 @@ ul {
   }
 }
 .fxt-template-layout9 .fxt-content h2 {
-  font-size: 20px;
+  font-size: 2.5rem;
+  padding-bottom: .5rem;
+  text-align: center;
   color: #fff;
 }
 @media only screen and (max-width: 991px) {
@@ -3463,7 +3469,7 @@ ul {
   box-shadow: none;
   border: 1px solid #8385bf;
   padding: 10px 15px;
-  background-color: transparent;
+  background-color: #E8F0FE;
   color: #fff;
 }
 .fxt-template-layout9 .fxt-form input::-webkit-input-placeholder {
@@ -3497,8 +3503,8 @@ ul {
   outline: none;
   border: 0;
   color: #fff;
-  border-radius: 3px;
-  background-color: #ffbd3f;
+  border-radius: 36px;
+  background-color: #770b7b;
   padding: 10px 36px;
   margin-bottom: 10px;
   width: 100%;
@@ -3507,14 +3513,14 @@ ul {
   transition: all 0.3s ease-in-out;
 }
 .fxt-template-layout9 .fxt-btn-fill:hover {
-  background-color: #db9e2d;
-  border-color: #db9e2d;
+  background-color: #ffbde5;
+  border-color: #ffbde5;
 }
 .fxt-template-layout9 .fxt-btn-fill:focus {
   outline: none;
 }
 .fxt-template-layout9 .switcher-text {
-  color: #d4d4d4;
+  color: white;
   margin-bottom: 5px;
   text-decoration: underline;
   font-size: 15px;
@@ -3524,10 +3530,10 @@ ul {
   transition: all 0.3s ease-in-out;
 }
 .fxt-template-layout9 .switcher-text:hover {
-  color: #e6e6e6;
+  color: white;
 }
 .fxt-template-layout9 .switcher-text2 {
-  color: #d4d4d4;
+  color: white;
   text-decoration: underline;
   font-size: 15px;
   display: inline-block;
@@ -3539,7 +3545,7 @@ ul {
   margin-left: 3px;
 }
 .fxt-template-layout9 .switcher-text2:hover {
-  color: #e6e6e6;
+  color: white;
 }
 .fxt-template-layout9 .checkbox {
   padding-left: 5px;
@@ -3548,7 +3554,7 @@ ul {
 }
 .fxt-template-layout9 .checkbox label {
   padding-left: 20px;
-  color: #b9b9b9;
+  color: white;
   margin-bottom: 0;
   font-size: 15px;
   position: relative;
@@ -3595,7 +3601,7 @@ ul {
   text-align: center;
 }
 .fxt-template-layout9 .fxt-footer p {
-  color: #b6b6b6;
+  color: white;
 }
 /*========================================================================
 13. Demo Layout Ten
