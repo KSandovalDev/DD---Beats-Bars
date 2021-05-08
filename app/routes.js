@@ -1,5 +1,6 @@
-module.exports = function (app, passport, db, multer, ObjectId) {
+module.exports = function (app, passport, db, multer, ObjectId, bucket) {
 
+ 
 
 
 // Image Upload Code =========================================================================
@@ -86,7 +87,7 @@ var upload = multer({storage: storage});
         })
    })})})
 
-
+// using GridFS to store images
 
   app.post('/userSetup', upload.single('file-to-upload'), (req, res, next) => {
     let uId = ObjectId(req.session.passport.user)
@@ -143,7 +144,7 @@ app.post('/likeUser', (req, res) => {
   //update peopleILiked
   db.collection('userprofile')
   .findOneAndUpdate({username:req.user.local.email}, {
-    $push: {
+    $addToSet: {
       peopleILiked:req.body.userEmail
       }
   }, {
@@ -154,7 +155,7 @@ app.post('/likeUser', (req, res) => {
     //update array of other person
     db.collection('userprofile')
     .findOneAndUpdate({username:req.body.userEmail}, {
-      $push: {
+      $addToSet: {
         usersWhoLikedMe:req.user.local.email
     }
     }, {

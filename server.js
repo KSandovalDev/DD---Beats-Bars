@@ -19,9 +19,10 @@ const http = require('http');
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
+const mongodb = require('mongodb')
+
 
 var db
-
 // configuration ===============================================================
 mongoose.connect(configDB.url, (err, client) => {
   if (err) return console.log(err)
