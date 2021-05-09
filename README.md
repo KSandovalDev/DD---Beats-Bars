@@ -1,4 +1,4 @@
-# Beats-and-Bars
+# Beats & Bars
 
 
 <p align="center">
