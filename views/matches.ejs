@@ -52,7 +52,7 @@
                     <div class="box"><img class="rounded-circle" src="<%= filtered[i][0].imgPath %>">
                         <h3 class="name"><%= filtered[i][0].name %>, <%= filtered[i][0].age %></h3>
                         <p class="title"> Looking for: <%= filtered[i][0].looking %></p>
-                        <p class="description">Instrument & Level : <%= filtered[i][0].instrument %>, level :<%= filtered[i][0].instrumentLevel %> </p>
+                        <p class="description">Instrument: <%= filtered[i][0].instrument %>, Level: <%= filtered[i][0].instrumentLevel %> </p>
                         <!-- <div class="social"><a href="${linkedin}"><i class="fa fa-linkedin"></i></a></div> -->
                         <button id="edit" data-target="#<%= filtered[i][0]._id %>" data-toggle="modal" class="btn btn-secondary">View profile</button>
                                   
@@ -71,7 +71,7 @@
               </div>
               <div class="modal-body">
                   <!-- stuff goes here -->
-                  <img class="rounded-circle" src="<%= filtered[i][0].imgPath %>">
+                  <img class="rounded-circle" id="modPhoto" src="<%= filtered[i][0].imgPath %>">
                   <h6><%= filtered[i][0].name %>, <%= filtered[i][0].age %></h6>
                   <p>Bio: <%= filtered[i][0].bio %></p>
                   <p>Genres: <%= filtered[i][0].genre1 %>, <%= filtered[i][0].genre2 %>, <%= filtered[i][0].genre3 %>, <%= filtered[i][0].genre4 %></p>

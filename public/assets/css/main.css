@@ -3619,9 +3619,9 @@ footer .copyright a:not(.btn) {
 
 .modal-content {
     border: none;
-    border-radius: 0;
+    border-radius: 36px;
     overflow-x: hidden;
-    background-color: var(--primary-bg-color-2);
+    background-color: #f3d6f3;
 }
 
 .theme-mode-dark .modal-content {
@@ -3639,6 +3639,7 @@ footer .copyright a:not(.btn) {
     font-weight: 600;
     color: var(--primary-t-color);
     border-radius: 0;
+    margin-left: 31%;
 }
 
 .theme-mode-dark .modal-header {
@@ -3657,8 +3658,8 @@ footer .copyright a:not(.btn) {
 .modal-body {
     width: 100%;
     display: flex;
-    align-items: center;
-    padding: 25px 25px 75px;
+    text-align: center;
+  
 }
 
 .theme-mode-dark .modal-body h2 {
