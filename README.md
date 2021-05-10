@@ -9,5 +9,5 @@
 
 &emsp;
 <p align="center">
-<img src="https://github.com/KSandovalDev/DD---Beats-Bars/blob/master/public/assets/images/beatsbarsindex.png" width="700">
+<img src="https://github.com/KSandovalDev/DD---Beats-Bars/blob/master/public/assets/images/Recording__1.gif" width="700">
 </p>
