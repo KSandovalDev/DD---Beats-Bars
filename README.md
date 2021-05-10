@@ -7,7 +7,6 @@
 
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[Click Here to go to the website!](https://beatsbars.herokuapp.com/)
 
-
 &emsp;
 <p align="center">
 <img src="https://github.com/KSandovalDev/DD---Beats-Bars/blob/master/public/assets/images/Recording__1.gif" width="700">
